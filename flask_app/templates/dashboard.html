@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayPuk Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dashboard_styles.css') }}">
+</head>
+<body data-username="{{ username }}">
+    <header>
+        <h1>PayPuk Dashboard</h1>
+        <h2>Hallo, <span id="username"></span>!</h2>
+    </header>
+
+    <main>
+        <form id="esp32-form">
+            <label for="esp32-id"><b>Enter your PayPuk ID:</b></label>
+            <input type="text" id="esp32-id" name="esp32_id" placeholder="e.g., PAYPUK123">
+            <button type="submit">Submit</button>
+            <b>Current Puk ID: </b><span id="current_puk_id"></span>
+            <button type="reset">Clear</button>
+        </form>
+
+        <!--<ul id="data-list"></ul>-->
+        <h1>Drinks List</h1>
+        <table style="width:100%" id="drinks_table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Preis</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Daten -->
+            </tbody>
+        </table>
+
+        <form id="pay-form">
+            <button type="submit">Bezahlen</button>
+        </form>
+    </main>
+    <!-- Include html2pdf library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='dashboard_scripts.js') }}"></script>
+</body>
+</html>
