@@ -54,17 +54,29 @@ def dashboard(username):
 def receive_puk_data():
     data = request.json
     print("Received data:", data)
-    esp32_id = data['esp_id']
-    user = next((item for item in user_list if item['puk_key'] == esp32_id), None)
-    drink = next((item for item in drinks if isinstance(item['IDs'], list) and data['rfid_id'] in item['IDs']), None)
-    user_drink = {'name': drink['name'], 'price': drink['price'], 'rfid_id': data['rfid_id'], 'timestamp': datetime.now().strftime("%d.%m.%Y %H:%MUhr")}
-    if(user != None and drink != None and (next((user['username'] for user in user_list if any(drink['rfid_id'] == data['rfid_id'] for drink in user['open_drinks'])), None)) == None):
-        user['open_drinks'].append(user_drink)
+    if(data['bar_paypuk'] == '0'):
+        print("Booking")
+        esp32_id = data['esp_id']
+        user = next((item for item in user_list if item['puk_key'] == esp32_id), None)
+        drink = next((item for item in drinks if isinstance(item['IDs'], list) and data['rfid_id'] in item['IDs']), None)
+        user_drink = {'name': drink['name'], 'price': drink['price'], 'rfid_id': data['rfid_id'], 'timestamp': datetime.now().strftime("%d.%m.%Y %H:%MUhr")}
+        if(user != None and drink != None and (next((user['username'] for user in user_list if any(drink['rfid_id'] == data['rfid_id'] for drink in user['open_drinks'])), None)) == None):
+            user['open_drinks'].append(user_drink)
+        else:
+            #Code wenn Getränk nicht gebucht werden kann
+            pass
+        print(user)
+        return 'Data received successfully'
     else:
-        #Code wenn Getränk nicht gebucht werden kann
-        pass
-    print(user)
-    return 'Data received successfully'
+        matching_drink = next((drink for user in user_list for drink in user['open_drinks'] if drink['rfid_id'] == data['rfid_id']), None)
+        print(matching_drink)
+        if(matching_drink != None): matching_drink['rfid_id'] = None
+        print(matching_drink)
+        return 'Data received successfully'
+    
+
+
+
 
 @app.route('/puk_id_data', methods=['POST'])
 def receive_puk_id():
