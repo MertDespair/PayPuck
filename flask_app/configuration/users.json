@@ -1,0 +1,35 @@
+[
+    {
+        "username": "philipp",
+        "password": "12345",
+        "address": {
+            "name": "Philipp Kraus",
+            "addr1": "König-Karl-Straße 33",
+            "addr2": "70372 Stuttgart"
+        },
+        "puk_key": null,
+        "open_drinks": []
+    },
+    {
+        "username": "test",
+        "password": "123",
+        "address": {
+            "name": "Philipp Kraus",
+            "addr1": "König-Karl-Straße 33",
+            "addr2": "70372 Stuttgart"
+        },
+        "puk_key": null,
+        "open_drinks": []
+    },
+    {
+        "username": "rico",
+        "password": "12345",
+        "address": {
+            "name": "Rico Szodruch",
+            "addr1": "König-Karl-Straße 33",
+            "addr2": "70372 Stuttgart"
+        },
+        "puk_key": null,
+        "open_drinks": []
+    }
+]
