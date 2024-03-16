@@ -1,3 +1,10 @@
+document.getElementById("custom-button").addEventListener("click", function() {
+    // Change 'anotherpage.html' to the path of the HTML page you want to navigate to
+    window.location.href = "Overview.html";
+  });
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     // Function to fetch and display data
     function fetchData() {

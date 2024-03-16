@@ -89,6 +89,29 @@ button[type="reset"]:hover {
     background: #9518fc;
 }
 
+#esp32-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Add styles for the custom button */
+#custom-button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+    background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+    color: #fff;
+}
+
+#custom-button:hover {
+    background: #9518fc;
+}
+
+
 table {
     width: 100%;
     border-collapse: collapse;
