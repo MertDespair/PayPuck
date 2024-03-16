@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+body {
+    background-color: #131313;
+    color: #fff;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Keyframes for pulsating effect */
+@keyframes pulse {
+    0% {
+        background-color: #ff0844;
+    }
+    50% {
+        background-color: #ff3274;
+    }
+    100% {
+        background-color: #ff0844;
+    }
+}
+
+header {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    padding: 0 50px;
+    animation: pulse 4s infinite; /* Apply pulsating animation */
+}
+
+header h2 {
+    font-size: 2em;
+    background-color: #ffffff;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+main {
+    padding: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+button[type="submit"],
+button[type="reset"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+button[type="submit"],
+button[type="reset"] {
+    cursor: pointer;
+    background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+    background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+    color: #fff;
+}
+
+button[type="submit"]:hover,
+button[type="reset"]:hover {
+    background: #9518fc;
+}
+
+#esp32-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Add styles for the custom button */
+#custom-button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+    background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+    color: #fff;
+}
+
+#custom-button:hover {
+    background: #9518fc;
+}
+
+.table-container {
+    display: flex;
+    align-items: flex-start; /* Align items at the start of the cross axis (top) */
+    flex-direction: column; /* Stack elements vertically */
+  }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+@keyframes pulse2 {
+    0% {
+        background-color: #9518fc;
+    }
+    50% {
+        background-color: #b741ff; /* Adjusted purple color */
+    }
+    100% {
+        background-color: #9518fc; /* Adjusted to original purple color */
+    }
+}
+
+th {
+    background-color: #9518fc;
+    color: #fff;
+    animation: pulse2 4s infinite; /* Apply pulsating animation */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header h2 {
+        font-size: 1.2em;
+    }
+}
