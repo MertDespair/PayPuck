@@ -5,6 +5,8 @@
 #include <WebServer.h>
 #include <EEPROM.h>
 
+//Server IP 192.168.4.1
+
 // Configuration
 char ssid[50];
 char password[50];

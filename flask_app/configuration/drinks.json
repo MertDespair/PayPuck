@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Bier",
+        "price": 4.5,
+        "IDs": [
+            "3B4ECE22"
+        ]
+    },
+    {
+        "name": "Cola",
+        "price": 3.5,
+        "IDs": [
+            "07C22C34"
+        ]
+    }
+]
