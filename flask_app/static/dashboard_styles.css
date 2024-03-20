@@ -9,7 +9,7 @@
 }
 
 body {
-    background-color: #131313;
+    background-color: #3a3a3a;
     color: #fff;
     line-height: 1.6;
     scroll-behavior: smooth;
@@ -20,13 +20,13 @@ body {
 /* Keyframes for pulsating effect */
 @keyframes pulse {
     0% {
-        background-color: #ff0844;
+        background-color: #0839ff;
     }
     50% {
-        background-color: #ff3274;
+        background-color: #3262ff;
     }
     100% {
-        background-color: #ff0844;
+        background-color: #0839ff;
     }
 }
 
@@ -79,8 +79,8 @@ button[type="reset"] {
 button[type="submit"],
 button[type="reset"] {
     cursor: pointer;
-    background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
-    background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+    background: -webkit-linear-gradient(to right, #45d1fc, #1d30fd, #833ab4);
+    background: linear-gradient(to right,  #45d1fc, #1d30fd, #833ab4);
     color: #fff;
 }
 
@@ -102,8 +102,8 @@ button[type="reset"]:hover {
     border-radius: 5px;
     font-size: 1em;
     cursor: pointer;
-    background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
-    background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+    background: -webkit-linear-gradient(to right, #45d1fc, #1d30fd, #833ab4);
+    background: linear-gradient(to right,  #45d1fc, #1d30fd, #833ab4);
     color: #fff;
 }
 
@@ -121,20 +121,19 @@ table {
 th, td {
     
     padding: 10px;
-    border-bottom: 1px solid #ddd;
     text-align: left;
 }
 
 
 @keyframes pulse2 {
     0% {
-        background-color: #9518fc;
+        background-color: #7718fc;
     }
     50% {
-        background-color: #b741ff; /* Adjusted purple color */
+        background-color: #8851e8; /* Adjusted purple color */
     }
     100% {
-        background-color: #9518fc; /* Adjusted to original purple color */
+        background-color: #7718fc; /* Adjusted to original purple color */
     }
 }
 
