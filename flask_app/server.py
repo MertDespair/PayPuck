@@ -1,19 +1,22 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 from datetime import datetime, timedelta
+import json, os
+
 
 app = Flask(__name__)
 
-#User Daten
-user_list = [
-            {'username': 'philipp', 'password': '12345', 'address': {'name': "Philipp Kraus",'addr1': "König-Karl-Straße 33", 'addr2': "70372 Stuttgart"}, 'puk_key': None, 'open_drinks': []}, 
-            {'username': 'rico', 'password': '12345', 'address': {'name': "Rico Szodruch",'addr1': "König-Karl-Straße 33", 'addr2': "70372 Stuttgart"}, 'puk_key': None, 'open_drinks': []}
-            ]
+# Define folder path
+folder_path = "configuration"
 
-# Getränke Daten
-drinks= [
-            {'name': "Bier", 'price': 4.50, 'IDs': ["3B4ECE22"]}, 
-            {'name': "Cola", 'price': 3.50, 'IDs': ["07C22C34"]}
-        ]
+# Define file paths for JSON files within the folder
+user_json_path = os.path.join(folder_path, "users.json")
+drinks_json_path = os.path.join(folder_path, "drinks.json")
+
+with open(user_json_path, 'r') as user_file:
+    user_list = json.load(user_file)
+
+with open(drinks_json_path, 'r') as drinks_file:
+    drinks = json.load(drinks_file)
 
 #Rechnungs Daten
 current_invoice_number = 1
@@ -23,8 +26,6 @@ from_addr = {
     'addr2': "12345 Musterstadt"
 }
 iban = "DE02 5001 0517 9343 9317 83"
-
-
 
 
 @app.route('/')
